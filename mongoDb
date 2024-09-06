@@ -1,0 +1,70 @@
+ npm i moongoose
+
+ Scema 
+
+go to MongoDb and create account
+
+create new Project
+
+create cluster
+
+niturkarravikiran9
+ARWVk8aMPLtX58SV
+
+npm install mongodb
+
+
+mongodb+srv://niturkarravikiran9:ARWVk8aMPLtX58SV@cluster0.g2qzk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+add IP address 0.0.0.0/0
+
+
+install mongoose 
+
+connect DB USING mongoose.connect
+
+create config folder
+
+create dev.js
+
+create modules folder for Schema
+
+const postsSchema =  Schema({
+    title : String,
+    userId : Number,
+    content : String
+})
+
+
+change Schema with validations
+
+add scripts in pckg.json
+
+"serve" : "node index.js",
+"dev" : "nodemon index.js" // npm run dev
+
+after this go to mpngoDB Dashboard
+
+click collection
+add Database name from DEV_URL
+and Collection name from Models file
+click create
+
+update now controlers
+remove all method except fetchAllPosts
+
+exports.getAllPosts = async (req, res) => {
+    Posts.find({}, (error, foundPosts) => {
+        if(error){
+            return res.status(404).send({errors : [{
+                title : 'Posts Error',
+                message : `Cannot find Posts`
+            }] })
+        }
+
+        return res.json(foundPosts)
+
+    })
+}
+
+it will throw a error callback are not supported now
