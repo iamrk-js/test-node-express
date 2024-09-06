@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 
 app.use(
   cors({
-    origin: ['http://127.0.0.1:5500', 'http://4200'],
+    origin: ['http://127.0.0.1:5500', 'http://4200', 'https://test-node-express-olive.vercel.app/'],
     methods: ['GET', 'POST', 'PATCH', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
